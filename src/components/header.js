@@ -32,19 +32,32 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 }
-const entryPoint = document.querySelector('header-container');
 
 
-const headerAppender = (entryPoint) => {
+
+const headerAppender = (enter) => {
  Header('Lambda Times', 'April 9 2021', '65')
  const hArr = Array.from(Header);
-    console.log(hArr);
+
+  hArr.forEach((info) => {
+    const head = Header(['Lambda Times', 'April 9 2021', '65']);
+    console.log(head);
+    return head;
+  })
+  const entry = document.querySelector('.header-container');
+  console.log(entry);
+  // hArr.forEach((hArr) =>{
+  //   entry.appendChild(hArr);
+    
+  // })
+  
+  }
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-}
+
 
 export { Header, headerAppender }
