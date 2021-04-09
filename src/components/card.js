@@ -1,4 +1,22 @@
 const Card = (article) => {
+  const begin = document.createElement('div');
+  const hLine = document.createElement('div');
+  const writer = document.createElement('div');
+  const iHolder = document.createElement('div');
+  const pic = document.createElement('img');
+  const text = document.createElement('span');
+
+  begin.classList.add('.card');
+  hLine.classList.add('.headline');
+  writer.classList.add('.author');
+  iHolder.classList.add('.image-container');
+
+  begin.append(hLine);
+  begin.append(writer);
+  writer.append(iHolder);
+  iHolder.append(pic);
+  writer.append(text);
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
