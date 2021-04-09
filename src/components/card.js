@@ -17,6 +17,9 @@ const Card = (article) => {
   iHolder.append(pic);
   writer.append(text);
 
+  hLine.textContent = `${headline}`
+  writer.textContent = `${authorName}`
+  pic.textContent = `${ authorPhote}`
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
