@@ -21,7 +21,9 @@ const Card = (article) => {
   writer.textContent = `${authorName}`
   pic.textContent = `${ authorPhote}`
 
-  
+  begin.addEventListener('click', (event) =>{
+    console.log(hLine);
+  })
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
