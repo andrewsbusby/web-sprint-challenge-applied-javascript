@@ -1,4 +1,24 @@
 const Header = (title, date, temp) => {
+  const header = document.createElement('div');
+  const sDate = document.createElement('span');
+  const h1Title = document.createElement('h1');
+  const sTemp = document.createElement('span')
+
+  header.classList.add('header');
+  sDate.classList.add('date');
+  sTemp.classList.add('temp');
+
+  header.append(sDate);
+  header.append(h1Title);
+  header.append(sTemp);
+
+  sDate.textContent = `${date}`;
+  h1Title.textContent = `${title}`;
+  sTemp.textContent = `${temp}`;
+  
+
+
+  return header;
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -12,8 +32,13 @@ const Header = (title, date, temp) => {
   //  </div>
   //
 }
+const entryPoint = document.querySelector('header-container');
 
-const headerAppender = (selector) => {
+
+const headerAppender = (entryPoint) => {
+ Header('Lambda Times', 'April 9 2021', '65')
+ const hArr = Array.from(Header);
+    console.log(hArr);
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
