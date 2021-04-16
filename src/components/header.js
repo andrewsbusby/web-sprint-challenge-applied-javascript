@@ -35,23 +35,11 @@ const Header = (title, date, temp) => {
 
 
 
-const headerAppender = (enter) => {
- Header('Lambda Times', 'April 9 2021', '65')
- const hArr = Array.from(Header);
-
-  hArr.forEach((info) => {
-    const head = Header(['Lambda Times', 'April 9 2021', '65']);
-    console.log(head);
-    return head;
-  })
-  const entry = document.querySelector('.header-container');
-  console.log(entry);
-  // hArr.forEach((hArr) =>{
-  //   entry.appendChild(hArr);
-    
-  // })
+const headerAppender = (selector) => {
+  const head = Header('Lambda Times', 'April 9 2021', '65');
+  document.querySelector(selector).appendChild(head);
   
-  }
+}
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
@@ -61,3 +49,16 @@ const headerAppender = (enter) => {
 
 
 export { Header, headerAppender }
+//  
+//  const hArr = Array.from(Header);
+
+//   hArr.forEach((info) => {
+//     const head = Header(['Lambda Times', 'April 9 2021', '65']);
+//     console.log(head);
+//     return head;
+//   })
+//   console.log(entry);
+  // hArr.forEach((hArr) =>{
+  //   entry.appendChild(hArr);
+    
+  // })

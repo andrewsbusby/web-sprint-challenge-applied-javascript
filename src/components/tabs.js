@@ -36,22 +36,22 @@ const Tabs = (topics) => {
   //
 }
 console.log(Tabs());
-const cssTab = document.querySelector('.topics');
 
-const tabsAppender = (cssTab) => {
+
+const tabsAppender = (selector) => {
+  
+
   axios
   .get('https://lambda-times-api.herokuapp.com/topics')
   .then((topics) => {
     console.log('RESPONSE', topics.data.topics);
     const items = topics.data.topics;
     console.log(items);
-    const tabArr = Tabs
-    items.forEach((items) => {
-      cssTab.append(tabArr)
-     debugger});
+  document.querySelector(selector).appendChild(tab);
+   const tab = Tabs(items)
+     });
    
-  })
-
+  
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
