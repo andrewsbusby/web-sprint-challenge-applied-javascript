@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { topics } from '../mocks/data';
 
 const Tabs = (topics) => {
   const topic = document.createElement('div');
@@ -35,12 +36,12 @@ const Tabs = (topics) => {
   // </div>
   //
 }
-console.log(Tabs());
+
 
 
 const tabsAppender = (selector) => {
   
-  const tab = Tabs(items)
+  const tab = Tabs({topics});
 
   axios
   .get('https://lambda-times-api.herokuapp.com/topics')
