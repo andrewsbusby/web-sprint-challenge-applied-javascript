@@ -40,6 +40,7 @@ console.log(Tabs());
 
 const tabsAppender = (selector) => {
   
+  const tab = Tabs(items)
 
   axios
   .get('https://lambda-times-api.herokuapp.com/topics')
@@ -47,10 +48,9 @@ const tabsAppender = (selector) => {
     console.log('RESPONSE', topics.data.topics);
     const items = topics.data.topics;
     console.log(items);
+  });
+  
   document.querySelector(selector).appendChild(tab);
-   const tab = Tabs(items)
-     });
-   
   
   // TASK 4
   // ---------------------
