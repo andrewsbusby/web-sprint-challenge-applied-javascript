@@ -77,6 +77,10 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. What is the DOM?
     DOM is the information of a website. It is all the html tags and what they contian. It is short for document object model.
 2. What is an event?
+    Events are user interactions with a website. Such as click, drag, copy, paste.
 3. What is an event listener?
+    The event listener is telling javaScript to listen for a specific user interactoin on the page or an element of the DOM.
 4. Why would we convert a NodeList into an Array?
+    We would convert a NodeList to an Array if we need to use array methods on it.
 5. What is a component?
+    A component is piece of javaScript that holds html elements and css selectors. It can be used to create new elemnts in html and append them to the DOM.
