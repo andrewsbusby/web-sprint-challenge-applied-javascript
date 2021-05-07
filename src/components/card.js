@@ -1,4 +1,40 @@
+import axios from 'axios';
+
 const Card = (article) => {
+
+  
+  // CREATE ELEMENTS  
+  const cards = document.createElement('div');
+  const headLines = document.createElement('div');
+  const authors = document.createElement('div');
+  const imgCon = document.createElement('div');
+  const image = document.createElement('img');
+  const authorsName = document.createElement('span');
+
+  // CLASSES
+  cards.classList.add('card');
+  headLines.classList.add('headline');
+  authors.classList.add('author');
+  imgCon.classList.add('img-container');
+
+  // APPENDING
+  cards.append(headLines);
+  cards.append(authors);
+  authors.append(imgCon);
+  imgCon.append(image);
+  authors.append(authorsName);
+
+  // TEXT CONTENT
+  headLines.textContent = `${article.headline}`;
+  image.src = `${article.authorPhoto}`;
+  authorsName.textContent = `${article.authorName}`
+
+  cards.addEventListener('click', ()=>{
+    console.log(headLines);
+  })
+
+  return cards;
+}
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,9 +53,38 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
 
 const cardAppender = (selector) => {
+
+  axios.get('https://lambda-times-api.herokuapp.com/articles')
+  .then((res)=>{
+    console.log(res.data.articles);
+    const entry = document.querySelector(selector);
+    const data = res.data.articles;
+
+    data.javascript.forEach(element =>{
+      entry.append(Card(element))
+
+    })
+      data.bootstrap.forEach(element =>{
+        entry.append(Card(element))
+        
+      })
+      data.jquery.forEach(element =>{
+        entry.append(Card(element))
+      })
+      data.technology.forEach(element =>{
+        entry.append(Card(element))
+      })
+      data.node.forEach(element =>{
+        entry.append(Card(element))
+      })
+  })
+  .catch((err)=>{
+    console.log(err);
+  }, [])
+
+}
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -28,6 +93,5 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
 
 export { Card, cardAppender }
